@@ -1215,6 +1215,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"common@workspace:package/common":
+  version: 0.0.0-use.local
+  resolution: "common@workspace:package/common"
+  languageName: unknown
+  linkType: soft
+
 "concat-map@npm:0.0.1":
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"
@@ -1332,8 +1338,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "design-system@workspace:."
   dependencies:
-    "@emotion/react": ^11.10.5
-    "@emotion/styled": ^11.10.5
     "@typescript-eslint/eslint-plugin": ^5.0.0
     eslint: ^8.0.1
     eslint-config-prettier: ^8.5.0
@@ -1351,6 +1355,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "designsystem@workspace:package/designsystem"
   dependencies:
+    "@emotion/react": ^11.10.5
+    "@emotion/styled": ^11.10.5
     "@types/react": ^18.0.24
     "@types/react-dom": ^18.0.8
     "@vitejs/plugin-react": ^2.2.0
