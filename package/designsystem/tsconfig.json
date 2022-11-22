@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  // override 나 추가하고 싶을 땐 아래처럼 추가 가능
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": ["vite/client"],
+    "paths": {
+      "~/*": ["src/*", "static/*"]
+    }
+  },
+  "include": ["./src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
