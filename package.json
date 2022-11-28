@@ -18,5 +18,11 @@
     "eslint-plugin-react": "latest",
     "prettier": "^2.7.1",
     "typescript": "*"
+  },
+  "resolutions": {
+    "webpack": "5",
+    "@storybook/core-common/webpack": "^5",
+    "@storybook/core-server/webpack": "^5",
+    "@storybook/react/webpack": "^5"
   }
 }

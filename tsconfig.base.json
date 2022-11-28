@@ -18,7 +18,7 @@
   },
   "references": [
     {
-      "path": "packages/designsystem"
+      "path": "package/quad-pillar-style"
     }
   ],
   "exclude": ["packages/**/dist/**"],
