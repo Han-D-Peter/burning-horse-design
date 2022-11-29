@@ -1,23 +1,55 @@
 import React from 'react';
-import './button.css';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+import { getBtnColorFromPallete, getSizeFromConstants } from '../utils';
+import { btnActionColor, colors } from '../constants/constants';
+
+type Color = 'gray' | 'red' | 'orange' | 'yellow' | 'green' | 'teal' | 'blue' | 'cyan' | 'purple' | 'pink';
+type Size = 'xs' | 'sm' | 'md' | 'lg';
+type Variant = 'solid' | 'outline' | 'ghost' | 'link';
 
 interface ButtonProps {
   /**
-   * Is this the principal call to action on the page?
+   * What color to use
    */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
+  colorScheme: Color;
+
   /**
    * How large should the button be?
    */
-  size?: 'small' | 'medium' | 'large';
+  size: Size;
+
   /**
-   * Button contents
+   * Visual Style of the Button
    */
-  label: string;
+  variant: Variant;
+
+  /**
+   * You can add left icon to the Button
+   */
+  leftIcon?: React.FC;
+  /**
+   * You can add right icon to the Button
+   */
+  rightIcon?: React.FC;
+
+  /**
+   * isLoading state will show a spinner
+   */
+  isLoading: boolean;
+
+  /**
+   * while is loading, you can show loadingText in Button
+   */
+  loadingText: string;
+
+  /**
+   * where spinner is, on left of loadingText or right of loadingText
+   */
+  spinnerPlacement: 'start' | 'end';
+
+  children: React.ReactNode;
+
   /**
    * Optional click handler
    */
@@ -27,22 +59,82 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button = ({ colorScheme = 'blue', size = 'md', variant = 'solid', leftIcon, rightIcon, isLoading, loadingText, spinnerPlacement, children, onClick }: ButtonProps) => {
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
+    <StyledButton colorScheme={colorScheme} variant={variant} size={size} type="button">
+      Click
+    </StyledButton>
   );
 };
+
+const StyledButton = styled.button<ButtonProps>`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+ 
+  ${({ variant, colorScheme }: { variant: Variant; colorScheme: Color }) => {
+    if (variant === 'solid') {
+      return css`
+        color: ${colors.gray.gray0};
+        border: none;
+        background: ${getBtnColorFromPallete(colorScheme)?.basic};
+        &:hover {
+          background-color: ${getBtnColorFromPallete(colorScheme)?.solid.hover};
+        }
+        &:active {
+          background-color: ${getBtnColorFromPallete(colorScheme)?.solid.active};
+        }
+      `;
+    }
+    if (variant === 'outline') {
+      return css`
+        color: ${getBtnColorFromPallete(colorScheme)?.basic};
+        border: 1px solid ${getBtnColorFromPallete(colorScheme)?.basic};
+        background: white;
+        &:hover {
+          background-color: ${getBtnColorFromPallete(colorScheme)?.outline.hover};
+        }
+        &:active {
+          background-color: ${getBtnColorFromPallete(colorScheme)?.outline.active};
+        }
+      `;
+    }
+    if (variant === 'ghost') {
+      return css`
+        color: ${getBtnColorFromPallete(colorScheme)?.basic};
+        border: none;
+        background: white;
+        &:hover {
+          background-color: ${getBtnColorFromPallete(colorScheme)?.ghost.hover};
+        }
+        &:active {
+          background-color: ${getBtnColorFromPallete(colorScheme)?.ghost.active};
+        }
+      `;
+    }
+    if (variant === 'link') {
+      return css`
+        color: ${getBtnColorFromPallete(colorScheme)?.basic};
+        border: none;
+        background: white;
+        &:hover {
+          text-decoration: underline;
+        }
+        &:active {
+          text-decoration: underline;
+        }
+      `;
+    }
+  }}
+  
+
+  ${({ size }: { size: Size }) => {
+    const boxSize = getSizeFromConstants(size);
+    return {
+      width: boxSize.width,
+      height: boxSize.height,
+    };
+  }}}
+`;
