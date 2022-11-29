@@ -12,7 +12,6 @@
   "rules": {},
   "extends": [
     "react-app",
-    "airbnb",
     "prettier" //여기서도 꼭 마지막에 추가
   ]
 }
