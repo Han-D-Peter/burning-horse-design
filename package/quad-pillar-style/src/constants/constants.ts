@@ -178,53 +178,183 @@ export const btnSize = {
 
 export const btnActionColor = {
   gray: {
-    normal: colors.gray.gray7,
-    hover: colors.gray.gray8,
-    active: colors.gray.gray9,
+    basic: colors.gray.gray7,
+    solid: {
+      normal: colors.gray.gray7,
+      hover: colors.gray.gray8,
+      active: colors.gray.gray9,
+    },
+    outline: {
+      normal: colors.gray.gray0,
+      hover: colors.gray.gray3,
+      active: colors.gray.gray5,
+    },
+    ghost: {
+      normal: colors.gray.gray0,
+      hover: colors.gray.gray3,
+      active: colors.gray.gray5,
+    },
   },
   red: {
-    normal: colors.red.red7,
-    hover: colors.red.red8,
-    active: colors.red.red9,
+    basic: colors.red.red7,
+    solid: {
+      normal: colors.red.red7,
+      hover: colors.red.red8,
+      active: colors.red.red9,
+    },
+    outline: {
+      normal: colors.red.red0,
+      hover: colors.red.red3,
+      active: colors.red.red5,
+    },
+    ghost: {
+      normal: colors.red.red0,
+      hover: colors.red.red3,
+      active: colors.red.red5,
+    },
   },
   orange: {
-    normal: colors.orange.orange7,
-    hover: colors.orange.orange8,
-    active: colors.orange.orange9,
+    basic: colors.orange.orange7,
+    solid: {
+      normal: colors.orange.orange7,
+      hover: colors.orange.orange8,
+      active: colors.orange.orange9,
+    },
+    outline: {
+      normal: colors.orange.orange0,
+      hover: colors.orange.orange3,
+      active: colors.orange.orange5,
+    },
+    ghost: {
+      normal: colors.orange.orange0,
+      hover: colors.orange.orange3,
+      active: colors.orange.orange5,
+    },
   },
   yellow: {
-    normal: colors.yellow.yellow7,
-    hover: colors.yellow.yellow8,
-    active: colors.yellow.yellow9,
+    basic: colors.yellow.yellow7,
+    solid: {
+      normal: colors.yellow.yellow7,
+      hover: colors.yellow.yellow8,
+      active: colors.yellow.yellow9,
+    },
+    outline: {
+      normal: colors.yellow.yellow0,
+      hover: colors.yellow.yellow3,
+      active: colors.yellow.yellow5,
+    },
+    ghost: {
+      normal: colors.yellow.yellow0,
+      hover: colors.yellow.yellow3,
+      active: colors.yellow.yellow5,
+    },
   },
   green: {
-    normal: colors.green.green7,
-    hover: colors.green.green8,
-    active: colors.green.green9,
+    basic: colors.green.green7,
+    solid: {
+      normal: colors.green.green7,
+      hover: colors.green.green8,
+      active: colors.green.green9,
+    },
+    outline: {
+      normal: colors.green.green0,
+      hover: colors.green.green3,
+      active: colors.green.green5,
+    },
+    ghost: {
+      normal: colors.green.green0,
+      hover: colors.green.green3,
+      active: colors.green.green5,
+    },
   },
   teal: {
-    normal: colors.teal.teal7,
-    hover: colors.teal.teal8,
-    active: colors.teal.teal9,
+    basic: colors.teal.teal7,
+    solid: {
+      normal: colors.teal.teal7,
+      hover: colors.teal.teal8,
+      active: colors.teal.teal9,
+    },
+    outline: {
+      normal: colors.teal.teal0,
+      hover: colors.teal.teal3,
+      active: colors.teal.teal5,
+    },
+    ghost: {
+      normal: colors.teal.teal0,
+      hover: colors.teal.teal3,
+      active: colors.teal.teal5,
+    },
   },
   blue: {
-    normal: colors.blue.blue7,
-    hover: colors.blue.blue8,
-    active: colors.blue.blue9,
+    basic: colors.blue.blue7,
+    solid: {
+      normal: colors.blue.blue7,
+      hover: colors.blue.blue8,
+      active: colors.blue.blue9,
+    },
+    outline: {
+      normal: colors.blue.blue0,
+      hover: colors.blue.blue3,
+      active: colors.blue.blue5,
+    },
+    ghost: {
+      normal: colors.blue.blue0,
+      hover: colors.blue.blue3,
+      active: colors.blue.blue5,
+    },
   },
   cyan: {
-    normal: colors.cyan.cyan7,
-    hover: colors.cyan.cyan8,
-    active: colors.cyan.cyan9,
+    basic: colors.cyan.cyan7,
+    solid: {
+      normal: colors.cyan.cyan7,
+      hover: colors.cyan.cyan8,
+      active: colors.cyan.cyan9,
+    },
+    outline: {
+      normal: colors.cyan.cyan0,
+      hover: colors.cyan.cyan3,
+      active: colors.cyan.cyan5,
+    },
+    ghost: {
+      normal: colors.cyan.cyan0,
+      hover: colors.cyan.cyan3,
+      active: colors.cyan.cyan5,
+    },
   },
   purple: {
-    normal: colors.violet.violet7,
-    hover: colors.violet.violet8,
-    active: colors.violet.violet9,
+    basic: colors.violet.violet7,
+    solid: {
+      normal: colors.violet.violet7,
+      hover: colors.violet.violet8,
+      active: colors.violet.violet9,
+    },
+    outline: {
+      normal: colors.violet.violet0,
+      hover: colors.violet.violet3,
+      active: colors.violet.violet5,
+    },
+    ghost: {
+      normal: colors.violet.violet0,
+      hover: colors.violet.violet3,
+      active: colors.violet.violet5,
+    },
   },
   pink: {
-    normal: colors.pink.pink7,
-    hover: colors.pink.pink8,
-    active: colors.pink.pink9,
+    basic: colors.pink.pink7,
+    solid: {
+      normal: colors.pink.pink7,
+      hover: colors.pink.pink8,
+      active: colors.pink.pink9,
+    },
+    outline: {
+      normal: colors.pink.pink0,
+      hover: colors.pink.pink3,
+      active: colors.pink.pink5,
+    },
+    ghost: {
+      normal: colors.pink.pink0,
+      hover: colors.pink.pink3,
+      active: colors.pink.pink5,
+    },
   },
 };

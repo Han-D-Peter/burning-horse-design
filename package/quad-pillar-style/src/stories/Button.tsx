@@ -1,7 +1,8 @@
 import React from 'react';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { getBtnColorFromPallete, getSizeFromConstants } from '../utils';
-import { colors } from '../constants/constants';
+import { btnActionColor, colors } from '../constants/constants';
 
 type Color = 'gray' | 'red' | 'orange' | 'yellow' | 'green' | 'teal' | 'blue' | 'cyan' | 'purple' | 'pink';
 type Size = 'xs' | 'sm' | 'md' | 'lg';
@@ -60,7 +61,7 @@ interface ButtonProps {
  */
 export const Button = ({ colorScheme = 'blue', size = 'md', variant = 'solid', leftIcon, rightIcon, isLoading, loadingText, spinnerPlacement, children, onClick }: ButtonProps) => {
   return (
-    <StyledButton colorScheme={colorScheme} size={size} type="button">
+    <StyledButton colorScheme={colorScheme} variant={variant} size={size} type="button">
       Click
     </StyledButton>
   );
@@ -70,16 +71,65 @@ const StyledButton = styled.button<ButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: ${colors.gray.gray0};
   border-radius: 6px;
-  border: none;
-  background-color: ${(props: ButtonProps) => getBtnColorFromPallete(props.colorScheme)?.normal};
-  &:hover {
-    background-color: ${(props: ButtonProps) => getBtnColorFromPallete(props.colorScheme)?.hover};
-  }
-  &:active {
-    background-color: ${(props: ButtonProps) => getBtnColorFromPallete(props.colorScheme)?.active};
-  }
+  cursor: pointer;
+ 
+  ${({ variant, colorScheme }: { variant: Variant; colorScheme: Color }) => {
+    if (variant === 'solid') {
+      return css`
+        color: ${colors.gray.gray0};
+        border: none;
+        background: ${getBtnColorFromPallete(colorScheme)?.basic};
+        &:hover {
+          background-color: ${getBtnColorFromPallete(colorScheme)?.solid.hover};
+        }
+        &:active {
+          background-color: ${getBtnColorFromPallete(colorScheme)?.solid.active};
+        }
+      `;
+    }
+    if (variant === 'outline') {
+      return css`
+        color: ${getBtnColorFromPallete(colorScheme)?.basic};
+        border: 1px solid ${getBtnColorFromPallete(colorScheme)?.basic};
+        background: white;
+        &:hover {
+          background-color: ${getBtnColorFromPallete(colorScheme)?.outline.hover};
+        }
+        &:active {
+          background-color: ${getBtnColorFromPallete(colorScheme)?.outline.active};
+        }
+      `;
+    }
+    if (variant === 'ghost') {
+      return css`
+        color: ${getBtnColorFromPallete(colorScheme)?.basic};
+        border: none;
+        background: white;
+        &:hover {
+          background-color: ${getBtnColorFromPallete(colorScheme)?.ghost.hover};
+        }
+        &:active {
+          background-color: ${getBtnColorFromPallete(colorScheme)?.ghost.active};
+        }
+      `;
+    }
+    if (variant === 'link') {
+      return css`
+        color: ${getBtnColorFromPallete(colorScheme)?.basic};
+        border: none;
+        background: white;
+        &:hover {
+          text-decoration: underline;
+        }
+        &:active {
+          text-decoration: underline;
+        }
+      `;
+    }
+  }}
+  
+
   ${({ size }: { size: Size }) => {
     const boxSize = getSizeFromConstants(size);
     return {
